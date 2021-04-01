@@ -52,4 +52,14 @@ public class PlayingCard {
     public int getFace() {
         return face;
     }
+
+
+    //TODO: make it more precise / concise.
+    @Override
+    public String toString() {
+        return "PlayingCard{" +
+                suit +
+                face +
+                '}';
+    }
 }

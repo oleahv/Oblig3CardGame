@@ -4,7 +4,8 @@ import java.util.*;
 
 public class DeckOfCards {
 
-    private List<PlayingCard> collectionOfAllTheCards = new ArrayList<PlayingCard>();
+    private List<PlayingCard> collectionOfAllTheCards = new ArrayList<>();
+    private List<PlayingCard> currentHand = new ArrayList<>();
   //  private Backend.PlayingCard[] collectionOfAllTheCards;
 
 
@@ -40,7 +41,7 @@ public class DeckOfCards {
     private final int[] faces = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13};
 
     //constructor which initialize 52 cards
-    public DeckOfCards(int seed) {
+    public DeckOfCards() {
 
 
         int cardIndex = 0;
@@ -56,35 +57,32 @@ public class DeckOfCards {
         }
     }
 
-    //TODO: shuffle method
+    //TODO: shuffle method. Make sure that it is randomised enough. Use a while loop if not, 500 times should do.
     /** use the shuffle method to randomise the cards. Then take the top 5 cards of the deck as a hand..?*/
+
+    public void shuffleTheDeckOfCards(){
+        Collections.shuffle(collectionOfAllTheCards);
+    }
 
 
     // TODO: dealing method
-
+   // List<PlayingCard> cardsDealtToHand = new ArrayList<>();
     public List<PlayingCard> dealHand(int n_numberOfRandomCards) {
         Random random = new Random();
         // list to hold playingCards dealt to the hand.
-        List<PlayingCard> cardsDealtToHand = new ArrayList<>();
+
         //TODO; check what it precisely does. Removing then adding removed cards?
         for (int index=0; index<n_numberOfRandomCards; index++) {
             PlayingCard playingCard = this.collectionOfAllTheCards
                     .remove(random.nextInt(this.collectionOfAllTheCards.size()));
-            cardsDealtToHand.add(playingCard);
+            currentHand.add(playingCard);
         }
-        return cardsDealtToHand;
+        return currentHand;
     }
 
 
 
-
-
-
-
-
-
-
-    // use collection to find the cards that need to be changed
+// use collection to find the cards that need to be changed
     /*public Backend.PlayingCard[] dealHand (int n_randomCards){
 
         // 52 cards with correct stuff
@@ -174,7 +172,20 @@ public class DeckOfCards {
 
     public void showAllCards(){
         System.out.println(collectionOfAllTheCards);
+        System.out.println(collectionOfAllTheCards.size());
     }
+
+    public List<PlayingCard> getCollectionOfAllTheCards() {
+        return collectionOfAllTheCards;
+    }
+
+
+
+    public List<PlayingCard> getCurrentHand() {
+        return currentHand;
+    }
+
+
     /*this.cards = new Card[52];
         for (int i = 0; i < ; i++) {
         Card card = new Card(...); //Instantiate a Card
