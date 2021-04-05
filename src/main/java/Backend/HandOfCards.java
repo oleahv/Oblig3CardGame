@@ -1,10 +1,7 @@
 package Backend;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-import java.util.stream.Collectors;
+import java.util.*;
+import java.util.stream.Stream;
 
 // Will represent a hand of cards
 public class HandOfCards {
@@ -31,14 +28,37 @@ public class HandOfCards {
                 .sum();
     }
 
-
+        //TODO: make this return the hearts cards
     public long checkForNumberOfHeartsInHand(){
         System.out.println(deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
                 .contains("H")).count());
+       /* System.out.println(deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
+                .contains("H")));*/
+
 
         return deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
                 .contains("H")).count();
     }
+
+
+
+    public Stream<PlayingCard> printAllHeartsInTheHand(){
+        if (deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
+                .contains("H")).count()>0){
+            System.out.println("there are hearts in the hand");
+            deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
+                    .contains("H")).forEach(card -> System.out.println(card));
+            return deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
+                    .contains("H"));
+        }
+        else
+        {
+            System.out.println("there are no hearts in the hand");
+            return null;
+        }
+    }
+
+
 
     public long checkForQueenOfSpadesInHand(){
         System.out.println(deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
@@ -159,6 +179,8 @@ public class HandOfCards {
 
     }*/
 /*
+
+
     //TODO: check for randomness.
     public void cardsInHandMethod(){
         deckOfCards.dealHand(5).get(0);
