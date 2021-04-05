@@ -32,11 +32,12 @@ public class HandOfCards {
     }
 
 
-    public int checkForNumberOfHeartsInHand(){
+    public long checkForNumberOfHeartsInHand(){
         System.out.println(deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
                 .contains("H")).count());
 
-        return 0;
+        return deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
+                .contains("H")).count();
     }
   /*  public int checkForNumberOfHeartsInHandStream(){
         char characterHeart = 'H';
