@@ -39,6 +39,48 @@ public class HandOfCards {
         return deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
                 .contains("H")).count();
     }
+
+    public long checkForQueenOfSpadesInHand(){
+        System.out.println(deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
+                .contains("S12")).count());
+
+        return deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
+                .contains("S12")).count();
+    }
+
+
+    public boolean checkForFlush(){
+
+        if (deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
+                .contains("S")).count() == 5){
+            System.out.println("flush of spades");
+            return true;
+        }
+
+        if (deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
+                .contains("H")).count() == 5){
+            System.out.println("flush of hearts");
+            return true;
+        }
+
+        if (deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
+                .contains("D")).count() == 5){
+            System.out.println("flush of diamonds");
+            return true;
+        }
+
+        if (deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
+                .contains("C")).count() == 5){
+            System.out.println("flush of cloves");
+            return true;
+        }
+
+        else {
+            System.out.println("no flush");
+            return false;
+        }
+    }
+
   /*  public int checkForNumberOfHeartsInHandStream(){
         char characterHeart = 'H';
         System.out.println(deckOfCards.getCurrentHand()
@@ -66,23 +108,6 @@ public class HandOfCards {
   }
 
 
-
-
-
-    //TODO: fix it to check for flush
-    Boolean gotFlush = false;
-    public Boolean checkForFlush(){
-
-        if (deckOfCards.getCurrentHand().size()==5){
-            System.out.println("Size -> 5");
-            //return true;
-        }
-        else {
-            System.out.println("Size =/= 5");
-           // return false;
-        }
-        return null;
-    }
     public void showAllCardsInHand(){
         System.out.println(deckOfCards.getCurrentHand());
         System.out.println(deckOfCards.getCurrentHand().size());
