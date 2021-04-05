@@ -1,5 +1,5 @@
 package Backend;
-
+/*
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -18,7 +18,7 @@ import java.util.List;
 
 public class UserInterfaceHandler extends Application {
 
-    private class MenuItemEventHandler implements EventHandler<ActionEvent> {
+    private class ButtonEventHandler implements EventHandler<ActionEvent> {
 
         @Override
         public void handle(ActionEvent actionEvent) {
@@ -27,7 +27,6 @@ public class UserInterfaceHandler extends Application {
             deckOfCards.dealHand(5);
             System.out.println("Dealt a hand");
         }
-
     }
 
     public static void main(String[] args) {
@@ -39,18 +38,19 @@ public class UserInterfaceHandler extends Application {
 
     public Button createButtonForDealHandMethod(){
         Button buttonDealHand = new Button("Deal a hand");
-        buttonDealHand.setOnAction(new MenuItemEventHandler());
+        buttonDealHand.setOnAction(new ButtonEventHandler());
         buttonDealHand.setOnAction(e -> {
             System.out.println("Button selected");
             DeckOfCards deckOfCards = new DeckOfCards();
             deckOfCards.dealHand(5);
+            System.out.println(deckOfCards.getCurrentHand());
             deckOfCards.showAllCards();
         });
         return buttonDealHand;
     }
     public Button createButtonForCheckingCards(){
         Button buttonCheckCards = new Button("Check cards");
-        buttonCheckCards.setOnAction(new MenuItemEventHandler());
+        buttonCheckCards.setOnAction(new ButtonEventHandler());
         buttonCheckCards.setOnAction(e -> {
             System.out.println("Button Check selected");
             DeckOfCards deckOfCards = new DeckOfCards();
@@ -87,4 +87,4 @@ public class UserInterfaceHandler extends Application {
     public void stop() throws Exception{
         System.exit(0);
     }
-}
+}*/

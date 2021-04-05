@@ -1,7 +1,10 @@
 package Backend;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
+import java.util.stream.Collectors;
 
 // Will represent a hand of cards
 public class HandOfCards {
@@ -15,6 +18,10 @@ public class HandOfCards {
 
     //TODO: remove extra code.
     // checks the 5 cards for their face value. Then add them all together
+
+
+
+
     public int theTotalSumOfAllCardsInHandStream(){
         System.out.println(deckOfCards.getCurrentHand()
                 .stream().mapToInt(card -> card.getFace())
@@ -22,22 +29,42 @@ public class HandOfCards {
         return deckOfCards.getCurrentHand()
                 .stream().mapToInt(card -> card.getFace())
                 .sum();
-
-
     }
 
-/*    public int theTotalSumOfAllCardsInHand(){
-        deckOfCards.getCurrentHand() theTotalSumOfAllCardsInHand
 
-                Function<List<Node>, Function<Integer, Integer>> getSum =
-                (list) ->
-                        (parentId) -> list.stream()
-                                .filter(x-> x.parentId.equals(parentId)) //with required parentIds
-                                .mapToInt(y-> y.getValue()) //
-                                .sum()
+    public int checkForNumberOfHeartsInHand(){
+        System.out.println(deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
+                .contains("H")).count());
 
         return 0;
+    }
+  /*  public int checkForNumberOfHeartsInHandStream(){
+        char characterHeart = 'H';
+        System.out.println(deckOfCards.getCurrentHand()
+                .stream().filter(card -> card.toString()== "H").mapToInt(card -> card.getSuit())
+                .sum() + " -gg");
+        return deckOfCards.getCurrentHand()
+                .stream().filter(card -> card.getAsString().contains(characterHeart))
+                .mapToInt(card -> card.getSuit())
+                .sum();
     }*/
+
+
+
+//str.chars().filter(num -> num == '$').count()
+  public int checkForNumberOfHeartsInHandStream(){
+      char characterHeart = 'H';
+
+      //deckOfCards.getCurrentHand().stream().filter(number -> number.equals('H').count();
+
+      System.out.println(deckOfCards.getCurrentHand()
+              .stream().filter(card -> card.toString()== "H").mapToInt(card -> card.getSuit())
+              .sum() + " -gg");
+      System.out.println(Collections.frequency(deckOfCards.getCurrentHand(), characterHeart+1));
+      return 0;
+  }
+
+
 
 
 
@@ -54,6 +81,10 @@ public class HandOfCards {
            // return false;
         }
         return null;
+    }
+    public void showAllCardsInHand(){
+        System.out.println(deckOfCards.getCurrentHand());
+        System.out.println(deckOfCards.getCurrentHand().size());
     }
 
 
