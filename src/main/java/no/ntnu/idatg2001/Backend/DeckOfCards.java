@@ -1,4 +1,4 @@
-package Backend;
+package no.ntnu.idatg2001.Backend;
 
 import java.util.*;
 
@@ -6,7 +6,7 @@ public class DeckOfCards {
 
     private List<PlayingCard> collectionOfAllTheCards = new ArrayList<>();
     private List<PlayingCard> currentHand = new ArrayList<>();
-  //  private Backend.PlayingCard[] collectionOfAllTheCards;
+  //  private no.ntnu.idatg2001.Backend.PlayingCard[] collectionOfAllTheCards;
 
 
     //private final int DECK_SIZE = 52;
@@ -45,7 +45,7 @@ public class DeckOfCards {
 
 
         int cardIndex = 0;
-     //   collectionOfAllTheCards = new ArrayList<Backend.PlayingCard>();
+     //   collectionOfAllTheCards = new ArrayList<no.ntnu.idatg2001.Backend.PlayingCard>();
 
          int i = 0;
         for (char suit : suits) {
@@ -83,22 +83,22 @@ public class DeckOfCards {
 
 
 // use collection to find the cards that need to be changed
-    /*public Backend.PlayingCard[] dealHand (int n_randomCards){
+    /*public no.ntnu.idatg2001.Backend.PlayingCard[] dealHand (int n_randomCards){
 
         // 52 cards with correct stuff
         System.out.println(collectionOfAllTheCards.length);
 
-        for (Backend.PlayingCard cardThatWillBeDealt: collectionOfAllTheCards) {
+        for (no.ntnu.idatg2001.Backend.PlayingCard cardThatWillBeDealt: collectionOfAllTheCards) {
             // if the card should be transferred to another list
         }
          return null;
     } */
 /*
-    public List<Backend.PlayingCard> dealHand(int n_randomCards) {
+    public List<no.ntnu.idatg2001.Backend.PlayingCard> dealHand(int n_randomCards) {
         n_randomCards = 5;
         Random random = new Random();
         List<Integer> listOfRandomIntegers = new ArrayList<>();
-        List<Backend.PlayingCard> cardsOnHand = new ArrayList<>();
+        List<no.ntnu.idatg2001.Backend.PlayingCard> cardsOnHand = new ArrayList<>();
         Collections.shuffle(listOfRandomIntegers);
         //TODO: check
         if (n_randomCards > collectionOfAllTheCards.size() || n_randomCards < 0){
@@ -108,7 +108,7 @@ public class DeckOfCards {
         int randomStuff = random.nextInt(collectionOfAllTheCards.size());
         if (!listOfRandomIntegers.contains(randomStuff)){
             listOfRandomIntegers.add(randomStuff);
-            Backend.PlayingCard firstElementInTheCollection = collectionOfAllTheCards.listIterator();
+            no.ntnu.idatg2001.Backend.PlayingCard firstElementInTheCollection = collectionOfAllTheCards.listIterator();
             cardsOnHand.add(collectionOfAllTheCards.get(randomStuff));
         }
     }
@@ -147,7 +147,7 @@ public class DeckOfCards {
 
         //ArrayList<Integer> listOfRandomNumbers = new ArrayList<>();
 /*
-        Backend.PlayingCard[] playingCardsHandCollection = new Backend.PlayingCard[n_randomCards];
+        no.ntnu.idatg2001.Backend.PlayingCard[] playingCardsHandCollection = new no.ntnu.idatg2001.Backend.PlayingCard[n_randomCards];
 
         Random random = new Random();
         for (int index = 0; index<collectionOfAllTheCards.length; index++) {
@@ -155,7 +155,7 @@ public class DeckOfCards {
             listOfRandomNumbers.add(randomNumber);
         }
         ListIterator iteratorRemoval =  collectionOfAllTheCards.listIterator();
-        for (Backend.PlayingCard playingCard: collectionOfAllTheCards) {
+        for (no.ntnu.idatg2001.Backend.PlayingCard playingCard: collectionOfAllTheCards) {
             Arrays.stream(collectionOfAllTheCards).sorted(listOfRandomNumbers)
             iteratorRemoval.remove(collectionOfAllTheCards.get(listOfRandomNumbers);
         }*/
@@ -165,7 +165,7 @@ public class DeckOfCards {
 
 
 
-   // ArrayList<Backend.PlayingCard> cardArrayList = new ArrayList<Backend.PlayingCard>();
+   // ArrayList<no.ntnu.idatg2001.Backend.PlayingCard> cardArrayList = new ArrayList<no.ntnu.idatg2001.Backend.PlayingCard>();
 
 
 
@@ -222,7 +222,7 @@ public class DeckOfCards {
             int cardIndex = 0;
             for (char suit : suits) {
                 for (int face : faces) {
-                    collectionOfAllTheCards[cardIndex] = new Backend.PlayingCard(suit, face);
+                    collectionOfAllTheCards[cardIndex] = new no.ntnu.idatg2001.Backend.PlayingCard(suit, face);
                     cardIndex++;
                 }
             }

@@ -1,4 +1,4 @@
-package Backend;
+package no.ntnu.idatg2001.Backend;
 
 import java.util.*;
 import java.util.stream.Stream;
@@ -50,6 +50,7 @@ public class HandOfCards {
                     .contains("H")).forEach(card -> System.out.println(card));
             return deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
                     .contains("H"));
+
         }
         else
         {

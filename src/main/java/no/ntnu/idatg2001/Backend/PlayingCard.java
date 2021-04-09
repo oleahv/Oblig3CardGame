@@ -1,4 +1,4 @@
-package Backend;
+package no.ntnu.idatg2001.Backend;
 //package idatx2001.oblig3.cardgame;
 
 /**
@@ -15,7 +15,7 @@ public class PlayingCard {
     private final int face; // a number between 1 and 13
 
     /**
-     * Creates an instance of a Backend.PlayingCard with a given suit and face.
+     * Creates an instance of a no.ntnu.idatg2001.Backend.PlayingCard with a given suit and face.
      *
      * @param suit The suit of the card, as a single character. 'S' for Spades,
      *             'H' for Heart, 'D' for Diamonds and 'C' for clubs

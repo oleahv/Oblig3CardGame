@@ -8,8 +8,67 @@
     <artifactId>Oblig3CardGame1</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <properties>
+        <maven.compiler.source>14</maven.compiler.source>
+        <maven.compiler.target>14</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <javafx.version>16</javafx.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-controls</artifactId>
+            <version>16</version>
+        </dependency>
+        <dependency>
+            <groupId>org.openjfx</groupId>
+            <artifactId>javafx-fxml</artifactId>
+            <version>16</version>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+            <version>5.7.0</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.8.1</version>
+                <configuration>
+                    <release>14</release>
+                    <source>14</source>
+                    <target>14</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.openjfx</groupId>
+                <artifactId>javafx-maven-plugin</artifactId>
+                <version>0.0.4</version>
+                <configuration>
+                 <mainClass>no.ntnu.idatg2001.run.App</mainClass>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+</project>
+
+
+
+
+
+
+
+
+
     <!-- Note. This is a standard POM-file used to ensure that all functionality is covered (that is wanted at this point).
-        It may or may not include additional functionality that is not used.-->
+        It may or may not include additional functionality that is not used.
 
     <dependencies>
         <dependency>
@@ -30,8 +89,8 @@
             <version>13</version>
         </dependency>
     </dependencies>
-
-    <!-- Config the compiler -->
+    -->
+    <!-- Config the compiler
     <properties>
         <maven.compiler.source>14</maven.compiler.source>
         <maven.compiler.target>14</maven.compiler.target>
@@ -45,7 +104,7 @@
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.3</version>
                 <configuration>
-                    <mainClass>NotLogged.TestMain</mainClass>
+                    <mainClass>no.ntnu.idatg2001.NotLogged.TestMain</mainClass>
                     <executable>C:\Program Files\Java\jdk-14.0.2\bin\java</executable>
                 </configuration>
             </plugin>
@@ -62,7 +121,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>>
-                            <mainClass>NotLogged.TestMain</mainClass>
+                            <mainClass>no.ntnu.idatg2001.NotLogged.TestMain</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -72,12 +131,12 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.6.0</version>
                 <configuration>
-                    <mainClass>NotLogged.TestMain</mainClass>
+                    <mainClass>no.ntnu.idatg2001.NotLogged.TestMain</mainClass>
                 </configuration>
             </plugin>
         </plugins>
-    </build>
-    <!-- NotLogged.TestMain-->
-    <!-- Backend.UserInterfaceHandler-->
+    </build>-->
+    <!-- no.ntnu.idatg2001.NotLogged.TestMain-->
+    <!-- no.ntnu.idatg2001.Backend.UserInterfaceHandler
 </project>
-
+        -->

@@ -1,4 +1,4 @@
-package Backend;
+package no.ntnu.idatg2001.Backend;
 /*
 import javafx.application.Application;
 import javafx.scene.control.ListCell;
