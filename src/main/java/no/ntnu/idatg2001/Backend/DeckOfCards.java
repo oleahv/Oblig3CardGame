@@ -80,6 +80,21 @@ public class DeckOfCards {
         return currentHand;
     }
 
+    //TODO: add the cards back to the deck
+    public List<PlayingCard> unDealHand(int n_numberOfRandomCards) {
+        Random random = new Random();
+        // list to hold playingCards returned to the deck.
+
+        //TODO; check what it precisely does. Removing then adding removed cards?
+        for (int index=0; index<n_numberOfRandomCards; index++) {
+            PlayingCard playingCard = this.getCurrentHand()
+                    .remove(random.nextInt(this.getCurrentHand().size()));
+            collectionOfAllTheCards.add(playingCard);
+        }
+        return collectionOfAllTheCards;
+    }
+
+
 
 
 // use collection to find the cards that need to be changed
