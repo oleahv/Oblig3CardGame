@@ -1,6 +1,7 @@
 package no.ntnu.idatg2001.Backend;
 
 import java.util.*;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 // Will represent a hand of cards
@@ -40,24 +41,14 @@ public class HandOfCards {
                 .contains("H")).count();
     }
 
+    public ArrayList<PlayingCard> printAllHeartsInTheHand() {
+        ArrayList<PlayingCard> playingCardArrayListHearts = new ArrayList<>();
+        deckOfCards.getCurrentHand().stream().filter(playingCard -> playingCard.getAsString()
+                .contains("H")).forEach(playingCardArrayListHearts::add);
 
-
-    public Stream<PlayingCard> printAllHeartsInTheHand(){
-        if (deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
-                .contains("H")).count()>0){
-            System.out.println("there are hearts in the hand");
-            deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
-                    .contains("H")).forEach(card -> System.out.println(card));
-            return deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
-                    .contains("H"));
-
-        }
-        else
-        {
-            System.out.println("there are no hearts in the hand");
-            return null;
-        }
+        return playingCardArrayListHearts;
     }
+
 
 
 
@@ -102,20 +93,7 @@ public class HandOfCards {
         }
     }
 
-  /*  public int checkForNumberOfHeartsInHandStream(){
-        char characterHeart = 'H';
-        System.out.println(deckOfCards.getCurrentHand()
-                .stream().filter(card -> card.toString()== "H").mapToInt(card -> card.getSuit())
-                .sum() + " -gg");
-        return deckOfCards.getCurrentHand()
-                .stream().filter(card -> card.getAsString().contains(characterHeart))
-                .mapToInt(card -> card.getSuit())
-                .sum();
-    }*/
-
-
-
-//str.chars().filter(num -> num == '$').count()
+    //TODO: check if it can be removed
   public int checkForNumberOfHeartsInHandStream(){
       char characterHeart = 'H';
 
@@ -128,71 +106,13 @@ public class HandOfCards {
       return 0;
   }
 
-
+    //testing purposes
     public void showAllCardsInHand(){
         System.out.println(deckOfCards.getCurrentHand());
         System.out.println(deckOfCards.getCurrentHand().size());
     }
 
 
-/*
-    // cards in hand
-    private List<PlayingCard> collectionOfCardsInHand = new ArrayList<>();
-
-    DeckOfCards deckOfCards = new DeckOfCards();
-
-    //String cardsThatAreInHand = deckOfCards.dealHand(5).toString();
-    //TODO: May not be needed
-    public static final int HAND_SIZE_LIMIT = 5;
-
-
-    public HandOfCards(List<PlayingCard> collectionOfCardsInHand) {
-        this.collectionOfCardsInHand = collectionOfCardsInHand;
-    }
-
-    @Override
-    public String toString() {
-        String cardsInHandStringFormat = "[";
-        for (int index= 0; index < HAND_SIZE_LIMIT;index++) {
-            if (index == (HAND_SIZE_LIMIT - 1)){
-                cardsInHandStringFormat +=collectionOfCardsInHand.toString();
-            }
-            else{
-                cardsInHandStringFormat += collectionOfCardsInHand +", ";
-            }
-        }
-        cardsInHandStringFormat += "]";
-        return cardsInHandStringFormat;
-    }
-
-    public int sumOfAllCardsInTheHand() {
-
-      //  collectionOfCardsInHand.get(0).getAsString();
-        return deckOfCards.cardsDealtToHand.size();
-    }
-
-
-
-
-
-    public HandOfCards() {
-
-
-    }*/
-/*
-
-
-    //TODO: check for randomness.
-    public void cardsInHandMethod(){
-        deckOfCards.dealHand(5).get(0);
-        deckOfCards.dealHand(5).get(0);
-        deckOfCards.dealHand(5).get(1);
-        deckOfCards.dealHand(5).get(2);
-        deckOfCards.dealHand(5).get(3);
-
-        System.out.println(deckOfCards.dealHand(5).get(4));
-    }
-    */
 
 
 }

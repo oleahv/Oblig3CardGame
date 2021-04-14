@@ -17,6 +17,8 @@ public class App extends Application {
 
     public static DeckOfCards cardList = new DeckOfCards();
 
+    public static HandOfCards handOfCards = new HandOfCards(cardList);
+
   //  public static DeckOfCards deckOfCards = new DeckOfCards();
 
     public static void main(String[] args) {

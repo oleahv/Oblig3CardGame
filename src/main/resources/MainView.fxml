@@ -2,18 +2,26 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="no.ntnu.idatg2001.run.MainViewController">
    <children>
-      <Button fx:id="dealHandButton" layoutX="440.0" layoutY="211.0" mnemonicParsing="false" onMouseClicked="#handleDealHandButton" style="-fx-cursor: hand;" text="Deal hand">
+      <Button fx:id="dealHandButton" layoutX="434.0" layoutY="83.0" mnemonicParsing="false" onMouseClicked="#handleDealHandButton" style="-fx-cursor: hand;" text="Deal hand">
          <font>
             <Font name="Helvetica" size="18.0" />
          </font>
       </Button>
-      <ListView fx:id="listOfCards" layoutX="39.0" layoutY="68.0" prefHeight="132.0" prefWidth="317.0" style="-fx-cursor: hand;" />
-      <Text layoutX="91.0" layoutY="64.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cards in hand" wrappingWidth="246.93670654296875" />
+      <ListView fx:id="listOfCards" layoutX="14.0" layoutY="37.0" prefHeight="132.0" prefWidth="317.0" style="-fx-cursor: hand;" />
+      <Text layoutX="14.0" layoutY="33.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Cards in hand" wrappingWidth="246.93670654296875">
+         <font>
+            <Font size="18.0" />
+         </font></Text>
+      <TextArea fx:id="textHeartsInHand" editable="false" layoutX="386.0" layoutY="224.0" prefHeight="162.0" prefWidth="200.0" promptText="Hearts in hand:" wrapText="true" />
+      <TextArea fx:id="textGotFlush" editable="false" layoutX="13.0" layoutY="223.0" prefHeight="71.0" prefWidth="294.0" promptText="Got flush?" wrapText="true" />
+      <TextArea fx:id="textGotQueenOfSpades" editable="false" layoutX="14.0" layoutY="315.0" prefHeight="71.0" prefWidth="294.0" promptText="Got Queen of Spades?" wrapText="true" />
+      <TextArea fx:id="textSumOfCardsInHand" editable="false" layoutX="386.0" layoutY="169.0" prefHeight="31.0" prefWidth="200.0" promptText="Sum of cards in hand:" wrapText="true" />
    </children>
 </AnchorPane>
