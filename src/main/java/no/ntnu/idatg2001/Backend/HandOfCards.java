@@ -1,46 +1,64 @@
 package no.ntnu.idatg2001.Backend;
 
-import java.util.*;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+import java.util.ArrayList;
 
+/**
+ * The type Hand of cards.
+ */
 // Will represent a hand of cards
 public class HandOfCards {
 
+
+    /**
+     * The Deck of cards.
+     */
     DeckOfCards deckOfCards;
 
 
+    /**
+     * Instantiates a new Hand of cards.
+     *
+     * @param deckOfCards the deck of cards
+     */
     public HandOfCards(DeckOfCards deckOfCards) {
         this.deckOfCards = deckOfCards;
     }
 
-    //TODO: remove extra code.
-    // checks the 5 cards for their face value. Then add them all together
 
-
-
-
+    /**
+     * The total sum of all cards in hand stream int.
+     *
+     * @return the int
+     */
+//The sum of all the cards in the hand
     public int theTotalSumOfAllCardsInHandStream(){
-        System.out.println(deckOfCards.getCurrentHand()
-                .stream().mapToInt(card -> card.getFace())
-                .sum());
+
         return deckOfCards.getCurrentHand()
                 .stream().mapToInt(card -> card.getFace())
                 .sum();
     }
 
-        //TODO: make this return the hearts cards
+
+    /**
+     * Check for number of hearts in hand long.
+     *
+     * @return the long
+     */
+//Used for checking if there is any hearts in the hand. Might be redundant.
     public long checkForNumberOfHeartsInHand(){
         System.out.println(deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
                 .contains("H")).count());
-       /* System.out.println(deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
-                .contains("H")));*/
-
 
         return deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
                 .contains("H")).count();
     }
 
+
+    /**
+     * Print all hearts in the hand array list.
+     *
+     * @return the array list
+     */
     public ArrayList<PlayingCard> printAllHeartsInTheHand() {
         ArrayList<PlayingCard> playingCardArrayListHearts = new ArrayList<>();
         deckOfCards.getCurrentHand().stream().filter(playingCard -> playingCard.getAsString()
@@ -50,69 +68,54 @@ public class HandOfCards {
     }
 
 
-
-
+    /**
+     * Check for queen of spades in hand long.
+     *
+     * @return the long
+     */
     public long checkForQueenOfSpadesInHand(){
-        System.out.println(deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
-                .contains("S12")).count());
 
-        return deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
+            return deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
                 .contains("S12")).count();
     }
 
 
-    public boolean checkForFlush(){
+    /**
+     * Check for if the hand got a flush, and if it does, return what kind.
+     * NOTE: This method only return ONE flush, even if you increase the hand size.
+     *
+     * @return the type of flush the player got in a string format. If there is no flush, then returns 'No flush'
+     */
+    public String checkForFlushType(){
 
         if (deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
                 .contains("S")).count() == 5){
-            System.out.println("flush of spades");
-            return true;
+                 return "Flush of spades";
         }
-
-        if (deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
+        else if (deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
                 .contains("H")).count() == 5){
-            System.out.println("flush of hearts");
-            return true;
+            return "Flush of hearts";
         }
-
-        if (deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
+        else if (deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
                 .contains("D")).count() == 5){
-            System.out.println("flush of diamonds");
-            return true;
+            return "Flush of diamonds";
         }
-
-        if (deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
+        else if (deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
                 .contains("C")).count() == 5){
-            System.out.println("flush of cloves");
-            return true;
+            return "Flush of cloves";
         }
-
         else {
-            System.out.println("no flush");
-            return false;
+            return "No flush";
         }
     }
 
-    //TODO: check if it can be removed
-  public int checkForNumberOfHeartsInHandStream(){
-      char characterHeart = 'H';
 
-      //deckOfCards.getCurrentHand().stream().filter(number -> number.equals('H').count();
-
-      System.out.println(deckOfCards.getCurrentHand()
-              .stream().filter(card -> card.toString()== "H").mapToInt(card -> card.getSuit())
-              .sum() + " -gg");
-      System.out.println(Collections.frequency(deckOfCards.getCurrentHand(), characterHeart+1));
-      return 0;
-  }
-
-    //testing purposes
+    /**
+     * Show all cards in hand. Used for testing purposes
+     */
+//testing purposes
     public void showAllCardsInHand(){
         System.out.println(deckOfCards.getCurrentHand());
         System.out.println(deckOfCards.getCurrentHand().size());
     }
-
-
-
-
 }

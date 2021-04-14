@@ -10,17 +10,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
-import no.ntnu.idatg2001.Backend.DeckOfCards;
-import no.ntnu.idatg2001.Backend.HandOfCards;
 import no.ntnu.idatg2001.Backend.PlayingCard;
-
 import java.io.IOException;
 import java.net.URL;
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
 
 public class MainViewController implements Initializable {
 
@@ -43,7 +38,11 @@ public class MainViewController implements Initializable {
     private TextArea textSumOfCardsInHand;
 
     /** A variable to quickly change the amount of cards dealt to the hand.
-     * Useful for testing purposes */
+     * Useful for testing purposes
+     * NOTE: Since flush requires 5 cards, the minimum number should be set to at least 5
+     * WARNING: ENTERING AN INTEGER THAT IS NEGATIVE OR IS GREATER THEN 52 WILL CAUSE AN ERROR.
+     * SUPPORT FOR SPECIAL DECKS IS NOT SUPPORTED IN THIS VERSION.
+     * */
     private static int NUMBER_OF_CARDS_TO_BE_DEALT_TO_THE_HAND = 5;
 
 
@@ -59,17 +58,12 @@ public class MainViewController implements Initializable {
 
     @FXML
     void gotFlushMethod () {
-        //   System.out.println(App.handOfCards.printAllHeartsInTheHand());
-        if (App.handOfCards.checkForFlush() == true) {
-            textGotFlush.setText("You got flush");
-        } else {
-            textGotFlush.setText("No flush");
-        }
+        textGotFlush.setText(App.handOfCards.checkForFlushType());
     }
 
     @FXML
     void gotQueenOfSpadesMethod () {
-        //   System.out.println(App.handOfCards.printAllHeartsInTheHand());
+
         if (App.handOfCards.checkForQueenOfSpadesInHand() != 0) {
             textGotQueenOfSpades.setText("You got queen of spades in the hand");
         } else {
@@ -124,6 +118,5 @@ public class MainViewController implements Initializable {
         listOfHeartsMethod();
         gotFlushMethod();
         gotQueenOfSpadesMethod();
-
     }
 }

@@ -1,25 +1,22 @@
 package no.ntnu.idatg2001.run;
 
-
-
 import javafx.application.Application;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.ListView;
 import javafx.stage.Stage;
 import no.ntnu.idatg2001.Backend.*;
-// import no.ntnu.idatg1002.gruppe4.work.MainForTestingLive;
+
 
 public class App extends Application {
 
+    /** List to hold all the cards in the deck */
     public static DeckOfCards cardList = new DeckOfCards();
 
+    /** List to hold all the cards in the hand */
     public static HandOfCards handOfCards = new HandOfCards(cardList);
 
-  //  public static DeckOfCards deckOfCards = new DeckOfCards();
+
 
     public static void main(String[] args) {
         launch(args);
@@ -34,9 +31,6 @@ public class App extends Application {
         Scene scene = new Scene(root);
         primaryStage.setScene(scene);
         primaryStage.show();
-
-
-
     }
 }
 
