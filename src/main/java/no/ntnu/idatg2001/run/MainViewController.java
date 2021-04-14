@@ -17,6 +17,9 @@ import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 
+/**
+ * The type Main view controller.
+ */
 public class MainViewController implements Initializable {
 
     @FXML
@@ -43,9 +46,12 @@ public class MainViewController implements Initializable {
      * WARNING: ENTERING AN INTEGER THAT IS NEGATIVE OR IS GREATER THEN 52 WILL CAUSE AN ERROR.
      * SUPPORT FOR SPECIAL DECKS IS NOT SUPPORTED IN THIS VERSION.
      * */
-    private static int NUMBER_OF_CARDS_TO_BE_DEALT_TO_THE_HAND = 5;
+    private final static int NUMBER_OF_CARDS_TO_BE_DEALT_TO_THE_HAND = 5;
 
 
+    /**
+     * List of hearts method will fill in the text area for 'hearts in hand' with the cards suit and face.
+     */
     @FXML
     void listOfHeartsMethod () {
 
@@ -56,11 +62,17 @@ public class MainViewController implements Initializable {
         }
     }
 
+    /**
+     * Got flush method will let the player know if they got a flush in their hand, and if yes, from which suit.
+     */
     @FXML
     void gotFlushMethod () {
         textGotFlush.setText(App.handOfCards.checkForFlushType());
     }
 
+    /**
+     * Got queen of spades method will check if the player got a queen of spades (S12) card in their hand.
+     */
     @FXML
     void gotQueenOfSpadesMethod () {
 
@@ -71,12 +83,24 @@ public class MainViewController implements Initializable {
         }
     }
 
+    /**
+     * Sum of cards in hand method will show the player the total sum of all the cards in hand.
+     */
     @FXML
     void sumOfCardsInHandMethod () {
 
        textSumOfCardsInHand.setText("Sum of cards in hand: " + App.handOfCards.theTotalSumOfAllCardsInHandStream());
     }
 
+    /**
+     * Handle deal hand button is the main interaction from the player.
+     * The button will check if cards already exists in the players hand. If yes, shuffle, and deal a hand.
+     * If no, then unDeal the hand, shuffle and then deal a new hand.
+     * After either situation the window will update.
+     *
+     * @param event the event
+     * @throws IOException the io exception
+     */
     @FXML
     void handleDealHandButton(MouseEvent event) throws IOException {
 
@@ -103,8 +127,9 @@ public class MainViewController implements Initializable {
     }
 
 
-
-
+    /**
+     * Note that this override call on all the methods to check the cards in hand
+     */
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         ObservableList<String> listOfPlayingCardsString = FXCollections.observableArrayList(new ArrayList<>());

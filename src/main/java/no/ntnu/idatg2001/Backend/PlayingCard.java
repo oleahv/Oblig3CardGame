@@ -55,7 +55,7 @@ public class PlayingCard {
     }
 
 
-    //TODO: make it more precise / concise.
+
     @Override
     public String toString() {
         return "PlayingCard{" +
