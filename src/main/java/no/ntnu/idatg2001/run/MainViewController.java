@@ -7,10 +7,13 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.ListView;
+import javafx.scene.control.TextArea;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import no.ntnu.idatg2001.Backend.PlayingCard;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -20,13 +23,13 @@ import java.util.ResourceBundle;
 /**
  * The type Main view controller.
  */
-public class MainViewController implements Initializable {
+public class MainViewController implements Initializable{
 
     @FXML
     private Button dealHandButton;
 
     @FXML
-    private ListView listOfCards;
+    private ListView<String> listOfCards;
 
     @FXML
     private TextArea textHeartsInHand;
@@ -36,6 +39,7 @@ public class MainViewController implements Initializable {
 
     @FXML
     private TextArea textGotQueenOfSpades;
+
 
     @FXML
     private TextArea textSumOfCardsInHand;
@@ -122,8 +126,7 @@ public class MainViewController implements Initializable {
                 load((getClass().getClassLoader().getResource("MainView.fxml")));
 
         Stage window = (Stage) dealHandButton.getScene().getWindow();
-        window.setScene(new Scene(root, 1000, 600));
-
+        window.setScene(new Scene(root));
     }
 
 

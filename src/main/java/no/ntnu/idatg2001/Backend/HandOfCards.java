@@ -5,7 +5,6 @@ import java.util.ArrayList;
 /**
  * The type Hand of cards.
  */
-// Will represent a hand of cards
 public class HandOfCards {
 
 
@@ -30,7 +29,6 @@ public class HandOfCards {
      *
      * @return the int
      */
-//The sum of all the cards in the hand
     public int theTotalSumOfAllCardsInHandStream(){
 
         return deckOfCards.getCurrentHand()
@@ -40,14 +38,11 @@ public class HandOfCards {
 
 
     /**
-     * Check for number of hearts in hand long.
+     * Check for number of hearts in hand.
      *
-     * @return the long
+     * @return the number of hearts in hand
      */
-//Used for checking if there is any hearts in the hand. Might be redundant.
     public long checkForNumberOfHeartsInHand(){
-        System.out.println(deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
-                .contains("H")).count());
 
         return deckOfCards.getCurrentHand().stream().filter(card -> card.getAsString()
                 .contains("H")).count();
@@ -55,9 +50,9 @@ public class HandOfCards {
 
 
     /**
-     * Print all hearts in the hand array list.
+     * Method to sort the hand for cards of hearts.
      *
-     * @return the array list
+     * @return the array list containing the hearts in hand
      */
     public ArrayList<PlayingCard> printAllHeartsInTheHand() {
         ArrayList<PlayingCard> playingCardArrayListHearts = new ArrayList<>();
@@ -69,9 +64,9 @@ public class HandOfCards {
 
 
     /**
-     * Check for queen of spades in hand long.
+     * Check for queen of spades in hand.
      *
-     * @return the long
+     * @return the number of queen of spades in hand
      */
     public long checkForQueenOfSpadesInHand(){
 
@@ -113,7 +108,6 @@ public class HandOfCards {
     /**
      * Show all cards in hand. Used for testing purposes
      */
-//testing purposes
     public void showAllCardsInHand(){
         System.out.println(deckOfCards.getCurrentHand());
         System.out.println(deckOfCards.getCurrentHand().size());
